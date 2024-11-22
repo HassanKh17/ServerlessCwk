@@ -100,16 +100,16 @@ This system is a serverless application built on Azure Functions to detect and v
    ```bash 
    func azure functionapp publish <license-plate-functions>
 ## How to Run
-### Locally
-1- Start the Azure Function runtime:
+**### Locally**
+###1- Start the Azure Function runtime:
 
    ```bash
    func start
    ```
-2- Test the blob-triggered function:
-   Upload images to your Azure Blob Storage container.
-3- Test the HTTP trigger:
-   Send a POST request using the following example:
+###2- Test the blob-triggered function:
+   -Upload images to your Azure Blob Storage container.
+##3- Test the HTTP trigger:
+   -Send a POST request using the following example:
    ```bash
    Copy code
    curl -X POST -H "Content-Type: application/json" -d '{
@@ -117,11 +117,11 @@ This system is a serverless application built on Azure Functions to detect and v
        "expiration_date": "2024-12-31"
    }' http://localhost:7071/api/request-permit
    ```
-### On Azure
-1- Trigger Blob Function:
+**### On Azure**
+###1- Trigger Blob Function:
      -Upload an image to the `capturedframes` blob container to trigger the blob function.
    
-2- Send POST Request:
+###2- Send POST Request:
      - Send a POST request to the deployed HTTP endpoint:
      
       ```bash
@@ -137,5 +137,8 @@ This system is a serverless application built on Azure Functions to detect and v
 
 ### Receive Notifications
 - If a violation is detected, administrators will receive email alerts.
+  
+### Configure Recipient Email
+- To receive email alerts, update the recipient email address in the `function_app.py` file. Look for the email configuration section and replace the existing recipient email with your email address.
 
    
