@@ -101,14 +101,14 @@ This system is a serverless application built on Azure Functions to detect and v
    func azure functionapp publish <license-plate-functions>
 ## How to Run
 ### Locally
-### 1- Start the Azure Function runtime:
+#### 1- Start the Azure Function runtime:
 
    ```bash
    func start
    ```
-### 2- Test the blob-triggered function:
+#### 2- Test the blob-triggered function:
    -Upload images to your Azure Blob Storage container.
-### 3- Test the HTTP trigger:
+#### 3- Test the HTTP trigger:
    -Send a POST request using the following example:
    ```bash
    Copy code
@@ -118,11 +118,11 @@ This system is a serverless application built on Azure Functions to detect and v
    }' http://localhost:7071/api/request-permit
    ```
 ### On Azure
-###1- Trigger Blob Function:
-     -Upload an image to the `capturedframes` blob container to trigger the blob function.
+#### 1- Trigger Blob Function:
+   -Upload an image to the `capturedframes` blob container to trigger the blob function.
    
-###2- Send POST Request:
-     - Send a POST request to the deployed HTTP endpoint:
+#### 2- Send POST Request:
+   - Send a POST request to the deployed HTTP endpoint:
      
       ```bash
       POST https://<license-plate-functions>.azurewebsites.net/api/request-permit
