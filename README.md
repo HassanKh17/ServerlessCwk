@@ -119,20 +119,22 @@ This system is a serverless application built on Azure Functions to detect and v
    ```
 ### On Azure
 1- Trigger Blob Function:
-   Upload an image to the `capturedframes` blob container to trigger the blob function.
+      Upload an image to the `capturedframes` blob container to trigger the blob function.
    
 2- Send POST Request:
-   Send a POST request to the deployed HTTP endpoint:
-   ```bash
-   POST https://<license-plate-functions>.azurewebsites.net/api/request-permit
-   ```
+      Send a POST request to the deployed HTTP endpoint:
+      ```bash
+      POST https://<license-plate-functions>.azurewebsites.net/api/request-permit
+      ```
 ## How to Use
-Permit Management:
-Send an HTTP POST request with `license_plate` and `expiration_date` fields to request a parking permit.
 
-Violation Detection:
-Upload images to the blob container `capturedframes`. The system will detect plates and check their validity against the database.
+### Permit Management
+- Send an HTTP POST request with `license_plate` and `expiration_date` fields to request a parking permit.
 
-Receive Notifications:
-If a violation is detected, administrators will receive email alerts.
+### Violation Detection
+- Upload images to the blob container `capturedframes`. The system will detect plates and check their validity against the database.
+
+### Receive Notifications
+- If a violation is detected, administrators will receive email alerts.
+
    
