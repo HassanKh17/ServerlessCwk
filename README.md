@@ -90,7 +90,7 @@ This system is a serverless application built on Azure Functions to detect and v
        "SQL_SERVER": "serverlesscourseworkserver.database.windows.net",
        "SQL_DATABASE": "LicensePlateDB",
        "SQL_USERNAME": "sqladmin",
-       "SQL_PASSWORD": "serverless!2",
+       "SQL_PASSWORD": "",
        "SQL_CONNECTION_STRING": "Driver={ODBC Driver 18 for SQL Server};Server=tcp:serverlesscourseworkserver.database.windows.net,1433;Database=LicensePlateDB;Uid=sqladmin;Pwd=serverless!2;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;",
        "FUNCTIONS_WORKER_RUNTIME": "python"
      },
