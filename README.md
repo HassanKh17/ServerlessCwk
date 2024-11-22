@@ -119,10 +119,11 @@ This system is a serverless application built on Azure Functions to detect and v
    ```
 ### On Azure
 1- Trigger Blob Function:
-      Upload an image to the `capturedframes` blob container to trigger the blob function.
+     -Upload an image to the `capturedframes` blob container to trigger the blob function.
    
 2- Send POST Request:
-      Send a POST request to the deployed HTTP endpoint:
+     - Send a POST request to the deployed HTTP endpoint:
+     
       ```bash
       POST https://<license-plate-functions>.azurewebsites.net/api/request-permit
       ```
