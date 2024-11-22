@@ -7,7 +7,7 @@ The License Plate Monitoring System is a serverless application designed to auto
 ## Table of Contents
 
 - [Overview](#overview)
-- [Azure Resoures](#architecture)
+- [Azure Resoures](#Azure-Resources-Visualized)
 - [Key Features](#key-features)
 - [Technologies Used](#technologies-used)
 - [Setup and Deployment](#setup-and-deployment)
@@ -79,3 +79,32 @@ This system is a serverless application built on Azure Functions to detect and v
    ```bash
    git clone <repository-url>
    cd license-plate-functions-project
+2. Install Dependencies
+   ```bash 
+   pip install -r requirements.txt
+3. Set Up Environment Variables in local.settings.json
+   ```bash
+   {
+     "IsEncrypted": false,
+     "Values": {
+       "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=licenseplateimgs;AccountKey=NKZCoPXXWZBHdDbfu3Ju3NTYz/NOKDmiKs+hHD9aCANFMT9XJ51B1VIBXLLaabgVhziGmJlGKOSZ+AStfurVjw==;EndpointSuffix=core.windows.net",
+       "AzureWebJobsLicenseplateimgs_STORAGE": "DefaultEndpointsProtocol=https;AccountName=licenseplateimgs;AccountKey=NKZCoPXXWZBHdDbfu3Ju3NTYz/NOKDmiKs+hHD9aCANFMT9XJ51B1VIBXLLaabgVhziGmJlGKOSZ+AStfurVjw==;EndpointSuffix=core.windows.net",
+       "COMPUTER_VISION_ENDPOINT": "https://licenseplatevision.cognitiveservices.azure.com/",
+       "COMPUTER_VISION_KEY": "7m7pCJK6MYOo8DrrWjkjpRfWThYbBwZHFzLbKvezuuzCpnFnnEPfJQQJ99AKACmepeSXJ3w3AAAFACOGJNyA",
+       "SQL_SERVER": "serverlesscourseworkserver.database.windows.net",
+       "SQL_DATABASE": "LicensePlateDB",
+       "SQL_USERNAME": "sqladmin",
+       "SQL_PASSWORD": "serverless!2",
+       "SQL_CONNECTION_STRING": "Driver={ODBC Driver 18 for SQL Server};Server=tcp:serverlesscourseworkserver.database.windows.net,1433;Database=LicensePlateDB;Uid=sqladmin;Pwd=serverless!2;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;",
+       "FUNCTIONS_WORKER_RUNTIME": "python"
+     },
+     "ConnectionStrings": {}
+   }
+4. Deploy the Azure Function App
+   ```bash 
+   func azure functionapp publish <license-plate-functions>
+   
+
+
+
+   
