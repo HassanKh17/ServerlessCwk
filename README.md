@@ -105,6 +105,43 @@ This system is a serverless application built on Azure Functions to detect and v
    func azure functionapp publish <license-plate-functions>
    
 
+## How to Run
+### Locally
+1- Start the Azure Function runtime:
 
+```bash
+func start
+```
+2- Test the blob-triggered function:
 
+Upload images to your Azure Blob Storage container.
+3- Test the HTTP trigger:
+
+Send a POST request using the following example:
+```bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{
+    "license_plate": "ABC123",
+    "expiration_date": "2024-12-31"
+}' http://localhost:7071/api/request-permit
+```
+### On Azure
+1- Trigger Blob Function:
+
+Upload an image to the **capturedframes** blob container to trigger the blob function.
+Send POST Request:
+
+Send a POST request to the deployed HTTP endpoint:
+```bash
+POST https://<license-plate-functions>.azurewebsites.net/api/request-permit
+```
+## How to Use
+Permit Management:
+Send an HTTP POST request with license_plate and expiration_date fields to request a parking permit.
+
+Violation Detection:
+Upload images to the blob container **capturedframes**. The system will detect plates and check their validity against the database.
+
+Receive Notifications:
+If a violation is detected, administrators will receive email alerts.
    
